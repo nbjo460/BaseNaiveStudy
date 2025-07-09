@@ -1,34 +1,28 @@
 import pandas as pd
 
-def run(table : pd, **kwargs):
+def run(table : pd, primary_classified : str, **kwargs):
     validate(table, **kwargs)
-    Px = get_all_Px(table)
-    result = get_Pxc(Px, age = "youth", income = "medium", student = "no", credit_rating = "fair")
-    print(result)
+    Px = get_all_Px(table, primary_classified)
+    Pxc = get_Pxc(Px, **kwargs)
+    PxcPc = get_PxcPc(table ,Pxc, primary_classified)
 
-    pc_yes = get_Pc(table, "yes")
-    pc_no = get_Pc(table, "no")
+    normal_result = normalization(PxcPc)
+    print(normal_result)
 
-    result["no"] *= pc_no
-    result["yes"] *= pc_yes
-
-    print(result)
 
 def validate(table : pd, **kwargs):
     columns = table.columns.tolist()
     # print(columns)
     for arg in kwargs.keys():
         if arg not in columns:
-            raise "Argument dosen't exist"
+            raise ValueError ("Argument dosen't exist")
 
-def get_all_Px(table : pd):
-    # a = get_spesificly_Px(table, left_column_name="a",left_value= "a1", right_column_name = "exist", right_value= "yes")
-
+def get_all_Px(table : pd, primary : str):
     uniques = {}
     yes = {}
     no = {}
     for col in table.columns:
-        if col == "exist": continue
+        if col == primary: continue
         uniques[col] = table[col].unique()
 
     for col,val in uniques.items():
@@ -38,14 +32,14 @@ def get_all_Px(table : pd):
             no[col] = {}
 
         for v in val:
-            yes[col][v] = get_spesificly_Px(table, left_column_name = col, left_value = v, right_column_name = "exist", right_value = "yes")
-            no[col][v] = get_spesificly_Px(table, left_column_name = col, left_value = v, right_column_name = "exist", right_value = "no")
+            yes[col][v] = get_spesificly_Px(table, left_column_name = col, left_value = v, right_column_name = primary, right_value = "yes")
+            no[col][v] = get_spesificly_Px(table, left_column_name = col, left_value = v, right_column_name = primary, right_value = "no")
 
     Px = {"yes" : yes, "no" : no}
     return Px
 
-def get_Pc(table : pd, choice : str):
-    return len(table[table["exist"] == choice]) /len(table)
+def get_Pc(table : pd, choice : str, primary : str):
+    return len(table[table[primary] == choice]) /len(table)
 
 def get_spesificly_Px(table: pd, right_column_name : str, right_value : str,
     left_column_name : str, left_value : str):
@@ -76,11 +70,23 @@ def get_Pxc(Px, **kwargs):
     result = {"no" : num_no, "yes" : num_yes}
     return result
 
-# data = {"a":{1:"a1", 2:"a2", 3:"a3", 4:"a4"}, "b":{1:"b1", 2:"b2", 3:"b3", 4:"b4"},
-#         "c":{1:"c1", 2:"c2", 3:"c3", 4:"c4"}, "exist":{1:"yes", 2:"yes", 3:"no", 4:"yes"}}
-# df = pd.DataFrame(data)
+def get_PxcPc(table : pd ,Pxc : dict, primary_classified : str):
+    pc_yes = get_Pc(table, "yes", primary_classified)
+    pc_no = get_Pc(table, "no", primary_classified)
+
+    Pxc["no"] *= pc_no
+    Pxc["yes"] *= pc_yes
+
+    return Pxc
+
+def normalization(PxcPc : dict):
+    total = PxcPc["yes"] + PxcPc["no"]
+    PxcPc["yes"] /= total
+    PxcPc["no"] /= total
+    return PxcPc
+
 df = pd.read_csv("buy_computer_data.csv")
 df = df.drop('id', axis = 1)
 print(df)
-run(df)
+run(df, "exist", age = "youth", income = "medium", student = "no", credit_rating = "fair")
 
