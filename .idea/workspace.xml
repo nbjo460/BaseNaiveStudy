@@ -5,6 +5,11 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="f8e86af8-499f-4358-8c2c-cd30fb41225a" name="Changes" comment="">
+      <change afterPath="$PROJECT_DIR$/.venv/Scripts/create_model.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.venv/Scripts/execute_prompt.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.venv/Scripts/manager.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.venv/Scripts/training.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.venv/Scripts/verify.py" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.venv/Scripts/Calc.py" beforeDir="false" afterPath="$PROJECT_DIR$/.venv/Scripts/Calc.py" afterDir="false" />
     </list>
@@ -52,6 +57,8 @@
   <component name="PropertiesComponent"><![CDATA[{
   "keyToString": {
     "Python.Calc.executor": "Run",
+    "Python.manager.executor": "Run",
+    "Python.training.executor": "Run",
     "RunOnceActivity.ShowReadmeOnStart": "true",
     "git-widget-placeholder": "master",
     "last_opened_file_path": "C:/Users/Menachem/Desktop/Galil/BaseNaiveStudy/.venv/Scripts"
