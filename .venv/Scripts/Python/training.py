@@ -12,39 +12,38 @@ class train:
 
     @staticmethod
     def get_all_Px(table : pd, primary : str):
-        uniques = train.create_unique_in_col(table, primary)
-        yes = {}
-        no = {}
+        uniques, classified = train.create_unique_in_col(table, primary)
+        types_class = {}
 
-        for col,val in uniques.items():
-            yes[col] = {}
-            no[col] = {}
+        for cls in classified:
+            for col,val in uniques.items():
+                bug = train.get_zero_bug_cols(table, uniques, col, primary, cls)
+                for v in val:
 
-            for v in val:
-                yes_len = len(table[(table[primary] == "yes") & (table[col] == v)])
-                no_len = len(table[(table[primary] == "no") & (table[col] == v)])
+                    if cls not in types_class: types_class[cls] = {}
+                    if col not in types_class[cls]: types_class[cls][col] = {}
 
-                yes_zero = yes_len < 1
-                no_zero = no_len < 1
-
-                yes[col][v] = train.get_spesificly_Px(table, left_column_name = col, left_value = v, right_column_name = primary, right_value = "yes", zero_bug = yes_zero, k = yes_len)
-                no[col][v] = train.get_spesificly_Px(table, left_column_name = col, left_value = v, right_column_name = primary, right_value = "no", zero_bug = no_zero, k = no_len)
-
-        Px = {"yes" : yes, "no" : no}
-
-        return Px
+                    types_class[cls][col] = train.get_spesificly_Px(table, left_column_name=col, left_value=v, right_column_name=primary,
+                                            right_value = cls, zero_bug=bug)
+        return types_class
 
     @staticmethod
     def create_unique_in_col(table : pd, primary : str):
         uniques = {}
+        classified = table[primary].unique().tolist()
         for col in table.columns:
             if col == primary: continue
             uniques[col] = table[col].unique()
-        return uniques
+        return uniques, classified
 
     @staticmethod
-    def avoid_zero_bug():
-        pass
+    def get_zero_bug_cols(table : pd, uniques :dict , col : str, primary : str, cls :str):
+        classes = table[table[primary] == cls]
+        num = classes[col].nunique()
+        all = len(uniques[col])
+
+        return num < all
+
     @staticmethod
     def get_spesificly_Px(table: pd, right_column_name : str, right_value : str, left_column_name : str, left_value : str, zero_bug : bool, k=1):
 
@@ -52,9 +51,13 @@ class train:
 
         right_count = len(right_table)
         left_count = len(right_table[right_table[left_column_name] == left_value])
+        # if left_count == 0:
+        #     left_count +=1
+        #     right_count+=1
+        # return left_count / right_count
 
+        return left_count / right_count if not zero_bug else (left_count+1) /(right_count+1)
 
-        return left_count / right_count if not zero_bug else (left_count+1) /(right_count+k)
 
     @staticmethod
     def save_json(Px : dict):

@@ -5,13 +5,17 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="f8e86af8-499f-4358-8c2c-cd30fb41225a" name="Changes" comment="">
-      <change afterPath="$PROJECT_DIR$/.venv/Scripts/create_model.py" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.venv/Scripts/execute_prompt.py" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.venv/Scripts/manager.py" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.venv/Scripts/training.py" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.venv/Scripts/verify.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.venv/Scripts/Python/manager.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.venv/Scripts/Python/verify.py" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.venv/Scripts/Calc.py" beforeDir="false" afterPath="$PROJECT_DIR$/.venv/Scripts/Calc.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.venv/Scripts/Calc.py" beforeDir="false" afterPath="$PROJECT_DIR$/.venv/Scripts/Python/Calc.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.venv/Scripts/buy_computer_data.csv" beforeDir="false" afterPath="$PROJECT_DIR$/.venv/Scripts/Python/buy_computer_data.csv" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.venv/Scripts/buy_computer_data.json" beforeDir="false" afterPath="$PROJECT_DIR$/.venv/Scripts/buy_computer_data.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.venv/Scripts/create_model.py" beforeDir="false" afterPath="$PROJECT_DIR$/.venv/Scripts/Python/create_model.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.venv/Scripts/execute_prompt.py" beforeDir="false" afterPath="$PROJECT_DIR$/.venv/Scripts/Python/execute_prompt.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.venv/Scripts/manager.py" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.venv/Scripts/training.py" beforeDir="false" afterPath="$PROJECT_DIR$/.venv/Scripts/Python/training.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.venv/Scripts/verify.py" beforeDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -41,9 +45,15 @@
   }
 }]]></component>
   <component name="HighlightingSettingsPerFile">
-    <setting file="file://$PROJECT_DIR$/.venv/Scripts/Calc.py" root0="FORCE_HIGHLIGHTING" />
+    <setting file="file://$PROJECT_DIR$/.venv/Scripts/Python/Calc.py" root0="FORCE_HIGHLIGHTING" />
+    <setting file="file://$PROJECT_DIR$/.venv/Scripts/Python/buy_computer_data.csv" root0="FORCE_HIGHLIGHTING" />
+    <setting file="file://$PROJECT_DIR$/.venv/Scripts/Python/create_model.py" root0="SKIP_INSPECTION" />
+    <setting file="file://$PROJECT_DIR$/.venv/Scripts/Python/execute_prompt.py" root0="SKIP_INSPECTION" />
+    <setting file="file://$PROJECT_DIR$/.venv/Scripts/Python/manager.py" root0="SKIP_INSPECTION" />
+    <setting file="file://$PROJECT_DIR$/.venv/Scripts/Python/phishing.csv" root0="SKIP_INSPECTION" />
+    <setting file="file://$PROJECT_DIR$/.venv/Scripts/Python/training.py" root0="SKIP_INSPECTION" />
+    <setting file="file://$PROJECT_DIR$/.venv/Scripts/Python/verify.py" root0="SKIP_INSPECTION" />
     <setting file="file://$PROJECT_DIR$/.venv/Scripts/activate_this.py" root0="FORCE_HIGHLIGHTING" />
-    <setting file="file://$PROJECT_DIR$/.venv/Scripts/buy_computer_data.csv" root0="FORCE_HIGHLIGHTING" />
   </component>
   <component name="ProjectColorInfo"><![CDATA[{
   "associatedIndex": 4
@@ -57,16 +67,23 @@
   <component name="PropertiesComponent"><![CDATA[{
   "keyToString": {
     "Python.Calc.executor": "Run",
+    "Python.create_model.executor": "Run",
+    "Python.execute_prompt.executor": "Run",
     "Python.manager.executor": "Run",
     "Python.training.executor": "Run",
+    "Python.verify.executor": "Run",
     "RunOnceActivity.ShowReadmeOnStart": "true",
     "git-widget-placeholder": "master",
-    "last_opened_file_path": "C:/Users/Menachem/Desktop/Galil/BaseNaiveStudy/.venv/Scripts"
+    "last_opened_file_path": "C:/Users/Menachem/Desktop/Galil/BaseNaiveStudy/.venv/Scripts/Python"
   }
 }]]></component>
   <component name="RecentsManager">
     <key name="CopyFile.RECENT_KEYS">
+      <recent name="C:\Users\Menachem\Desktop\Galil\BaseNaiveStudy\.venv\Scripts\Python" />
       <recent name="C:\Users\Menachem\Desktop\Galil\BaseNaiveStudy\.venv\Scripts" />
+    </key>
+    <key name="MoveFile.RECENT_KEYS">
+      <recent name="C:\Users\Menachem\Desktop\Galil\BaseNaiveStudy\.venv\Scripts\Python" />
     </key>
   </component>
   <component name="SharedIndexes">
@@ -86,5 +103,16 @@
       <updated>1751961935140</updated>
     </task>
     <servers />
+  </component>
+  <component name="Vcs.Log.Tabs.Properties">
+    <option name="TAB_STATES">
+      <map>
+        <entry key="MAIN">
+          <value>
+            <State />
+          </value>
+        </entry>
+      </map>
+    </option>
   </component>
 </project>
