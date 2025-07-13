@@ -30,5 +30,5 @@ def check_rows(model : dict ,rows : list, primary_classified : str):
                 successed += 1 if result == excepted else 0
         return successed
 
-def _result(row : dict, primary_classified : str):
+def excepted_result(row : dict, primary_classified : str):
         return row[primary_classified]

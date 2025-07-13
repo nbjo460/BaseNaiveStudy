@@ -5,17 +5,13 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="f8e86af8-499f-4358-8c2c-cd30fb41225a" name="Changes" comment="">
-      <change afterPath="$PROJECT_DIR$/.venv/Scripts/Python/manager.py" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.venv/Scripts/Python/verify.py" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.venv/Scripts/Calc.py" beforeDir="false" afterPath="$PROJECT_DIR$/.venv/Scripts/Python/Calc.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.venv/Scripts/buy_computer_data.csv" beforeDir="false" afterPath="$PROJECT_DIR$/.venv/Scripts/Python/buy_computer_data.csv" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.venv/Scripts/buy_computer_data.json" beforeDir="false" afterPath="$PROJECT_DIR$/.venv/Scripts/buy_computer_data.json" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.venv/Scripts/create_model.py" beforeDir="false" afterPath="$PROJECT_DIR$/.venv/Scripts/Python/create_model.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.venv/Scripts/execute_prompt.py" beforeDir="false" afterPath="$PROJECT_DIR$/.venv/Scripts/Python/execute_prompt.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.venv/Scripts/manager.py" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/.venv/Scripts/training.py" beforeDir="false" afterPath="$PROJECT_DIR$/.venv/Scripts/Python/training.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.venv/Scripts/verify.py" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.venv/Scripts/Python/buy_computer_data.json" beforeDir="false" afterPath="$PROJECT_DIR$/.venv/Scripts/Python/buy_computer_data.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.venv/Scripts/Python/create_model.py" beforeDir="false" afterPath="$PROJECT_DIR$/.venv/Scripts/Python/create_model.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.venv/Scripts/Python/execute_prompt.py" beforeDir="false" afterPath="$PROJECT_DIR$/.venv/Scripts/Python/execute_prompt.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.venv/Scripts/Python/manager.py" beforeDir="false" afterPath="$PROJECT_DIR$/.venv/Scripts/Python/manager.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.venv/Scripts/Python/training.py" beforeDir="false" afterPath="$PROJECT_DIR$/.venv/Scripts/Python/training.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.venv/Scripts/Python/verify.py" beforeDir="false" afterPath="$PROJECT_DIR$/.venv/Scripts/Python/verify.py" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />

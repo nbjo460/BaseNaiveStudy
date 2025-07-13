@@ -7,7 +7,6 @@ class train:
     def trainer(table : pd, primary_classified : str):
         Px = train.get_all_Px(table, primary_classified)
         train.save_json(Px)
-        print(Px)
         return Px
 
     @staticmethod
@@ -16,14 +15,13 @@ class train:
         types_class = {}
 
         for cls in classified:
+            types_class[cls] = {}
             for col,val in uniques.items():
                 bug = train.get_zero_bug_cols(table, uniques, col, primary, cls)
                 for v in val:
-
-                    if cls not in types_class: types_class[cls] = {}
                     if col not in types_class[cls]: types_class[cls][col] = {}
 
-                    types_class[cls][col] = train.get_spesificly_Px(table, left_column_name=col, left_value=v, right_column_name=primary,
+                    types_class[cls][col][v] = train.get_spesificly_Px(table, left_column_name=col, left_value=v, right_column_name=primary,
                                             right_value = cls, zero_bug=bug)
         return types_class
 
@@ -51,11 +49,6 @@ class train:
 
         right_count = len(right_table)
         left_count = len(right_table[right_table[left_column_name] == left_value])
-        # if left_count == 0:
-        #     left_count +=1
-        #     right_count+=1
-        # return left_count / right_count
-
         return left_count / right_count if not zero_bug else (left_count+1) /(right_count+1)
 
 

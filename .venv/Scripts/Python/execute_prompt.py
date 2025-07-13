@@ -10,20 +10,23 @@ def execute(model : dict ,primary_classified : str ,**kwargs):
     return result
 
 def get_Pxc(Px, **kwargs):
-    Pxs = {}
+    pxc = {}
     for cls in Px.keys():
-        Pxs[cls] = 1
-
-    for keys ,cls in Px.items():
-        for col, value in cls.items():
-            if col in kwargs: Pxs[keys] *= value
-    return Pxs
+        pxc[cls] = 1
+    for cls in Px:
+        for col ,val in kwargs.items():
+            if col in Px[cls]:
+                try:
+                    pxc[cls] *= Px[cls][col][val]
+                except:
+                    print(f"I dont have enough data of: {val}")
+    return pxc
 
 def get_PxcPc(Pc : dict ,Pxc : dict, primary_classified : str):
     tmp = Pxc.copy()
-    for cls in Pxc.keys():
-        tmp[cls] *= Pc[cls]
-    return Pxc
+    for col in Pc.keys():
+            tmp[col] *= Pc[col]
+    return tmp
 
 def calculate(Pc : dict, Px : dict, primary_classified : str, **kwargs):
     Pxc = get_Pxc(Px, **kwargs)
@@ -31,4 +34,10 @@ def calculate(Pc : dict, Px : dict, primary_classified : str, **kwargs):
     return PxcPc
 
 def show_result(result : dict):
-    return max(result.values())
+    max_name = ""
+    max_value = 0
+    for name, value in result.items():
+        if value > max_value:
+            max_name = name
+            max_value = value
+    return max_name
