@@ -1,5 +1,5 @@
 import pandas as pd
-from training import train as tr
+from Python.training import train as tr
 import numpy as np
 
 def execute(model : dict ,primary_classified : str ,**kwargs):
@@ -40,4 +40,4 @@ def show_result(result : dict):
         if value > max_value:
             max_name = name
             max_value = value
-    return max_name
+    return max_name, max_value

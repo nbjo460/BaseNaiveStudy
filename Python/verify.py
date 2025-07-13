@@ -1,5 +1,5 @@
 import pandas as pd
-import execute_prompt as ep
+from Python import execute_prompt as ep
 
 
 # return f"no: {result["yes"]}" if result["yes"] > result["no"] else f"no: {result["no"]}"
@@ -27,7 +27,7 @@ def check_rows(model : dict ,rows : list, primary_classified : str):
                 edited_row = row.copy()
                 del edited_row[primary_classified]
                 result = ep.execute(model, primary_classified, **edited_row)
-                successed += 1 if result == excepted else 0
+                successed += 1 if result[0] == excepted else 0
         return successed
 
 def excepted_result(row : dict, primary_classified : str):

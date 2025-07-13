@@ -5,13 +5,20 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="f8e86af8-499f-4358-8c2c-cd30fb41225a" name="Changes" comment="">
+      <change afterPath="$PROJECT_DIR$/Python/server.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/server/__init__.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/server/run_server.py" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.venv/Scripts/Python/buy_computer_data.json" beforeDir="false" afterPath="$PROJECT_DIR$/.venv/Scripts/Python/buy_computer_data.json" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.venv/Scripts/Python/create_model.py" beforeDir="false" afterPath="$PROJECT_DIR$/.venv/Scripts/Python/create_model.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.venv/Scripts/Python/execute_prompt.py" beforeDir="false" afterPath="$PROJECT_DIR$/.venv/Scripts/Python/execute_prompt.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.venv/Scripts/Python/manager.py" beforeDir="false" afterPath="$PROJECT_DIR$/.venv/Scripts/Python/manager.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.venv/Scripts/Python/training.py" beforeDir="false" afterPath="$PROJECT_DIR$/.venv/Scripts/Python/training.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.venv/Scripts/Python/verify.py" beforeDir="false" afterPath="$PROJECT_DIR$/.venv/Scripts/Python/verify.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.venv/Scripts/Python/Calc.py" beforeDir="false" afterPath="$PROJECT_DIR$/Python/Calc.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.venv/Scripts/Python/buy_computer_data.csv" beforeDir="false" afterPath="$PROJECT_DIR$/csv/buy_computer_data.csv" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.venv/Scripts/Python/buy_computer_data.json" beforeDir="false" afterPath="$PROJECT_DIR$/Python/buy_computer_data.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.venv/Scripts/Python/create_model.py" beforeDir="false" afterPath="$PROJECT_DIR$/Python/create_model.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.venv/Scripts/Python/execute_prompt.py" beforeDir="false" afterPath="$PROJECT_DIR$/Python/execute_prompt.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.venv/Scripts/Python/manager.py" beforeDir="false" afterPath="$PROJECT_DIR$/Python/manager.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.venv/Scripts/Python/phishing.csv" beforeDir="false" afterPath="$PROJECT_DIR$/csv/phishing.csv" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.venv/Scripts/Python/training.py" beforeDir="false" afterPath="$PROJECT_DIR$/Python/training.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.venv/Scripts/Python/verify.py" beforeDir="false" afterPath="$PROJECT_DIR$/Python/verify.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.venv/Scripts/server/run_server.py" beforeDir="false" afterPath="$PROJECT_DIR$/Python/__init__.py" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -66,6 +73,8 @@
     "Python.create_model.executor": "Run",
     "Python.execute_prompt.executor": "Run",
     "Python.manager.executor": "Run",
+    "Python.run_server.executor": "Run",
+    "Python.server.executor": "Run",
     "Python.training.executor": "Run",
     "Python.verify.executor": "Run",
     "RunOnceActivity.ShowReadmeOnStart": "true",
@@ -79,8 +88,39 @@
       <recent name="C:\Users\Menachem\Desktop\Galil\BaseNaiveStudy\.venv\Scripts" />
     </key>
     <key name="MoveFile.RECENT_KEYS">
+      <recent name="C:\Users\Menachem\Desktop\Galil\BaseNaiveStudy" />
+      <recent name="C:\Users\Menachem\Desktop\Galil\BaseNaiveStudy\csv" />
       <recent name="C:\Users\Menachem\Desktop\Galil\BaseNaiveStudy\.venv\Scripts\Python" />
     </key>
+  </component>
+  <component name="RunManager">
+    <configuration name="manager" type="PythonConfigurationType" factoryName="Python" temporary="true" nameIsGenerated="true">
+      <module name="BaseNaiveStudy" />
+      <option name="ENV_FILES" value="" />
+      <option name="INTERPRETER_OPTIONS" value="" />
+      <option name="PARENT_ENVS" value="true" />
+      <envs>
+        <env name="PYTHONUNBUFFERED" value="1" />
+      </envs>
+      <option name="SDK_HOME" value="" />
+      <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$/Python" />
+      <option name="IS_MODULE_SDK" value="true" />
+      <option name="ADD_CONTENT_ROOTS" value="true" />
+      <option name="ADD_SOURCE_ROOTS" value="true" />
+      <option name="SCRIPT_NAME" value="$PROJECT_DIR$/Python/manager.py" />
+      <option name="PARAMETERS" value="" />
+      <option name="SHOW_COMMAND_LINE" value="false" />
+      <option name="EMULATE_TERMINAL" value="false" />
+      <option name="MODULE_MODE" value="false" />
+      <option name="REDIRECT_INPUT" value="false" />
+      <option name="INPUT_FILE" value="" />
+      <method v="2" />
+    </configuration>
+    <recent_temporary>
+      <list>
+        <item itemvalue="Python.manager" />
+      </list>
+    </recent_temporary>
   </component>
   <component name="SharedIndexes">
     <attachedChunks>
