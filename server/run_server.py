@@ -5,6 +5,7 @@ import uvicorn
 from fastapi import FastAPI
 from fastapi.responses import HTMLResponse
 from Python.server import Server
+import pandas as pd
 
 app = FastAPI()
 server = Server()
@@ -51,7 +52,8 @@ def get_absolute_route(file_name):
         out = (f"The table is: {file_name}. <br>"
                f"The columns are:<br>{columns_shows}.<br>"
                f'<a href="/{columns_routes}" style="margin: 10px; display: inline-block; color:red; font-size : 20px;">{columns_routes}</a>')
-        return out
+        drops = create_dropdown(absolute_name, primary_cls, index_route)
+        return out + drops
     except:
         return f"No table: {file_name}"
 
@@ -67,7 +69,28 @@ def get_prediction(file_name ,primary : str, index : str, keys : str):
     result = server.run_server(file_name, index, primary, **params)
     return f"<h2>Prediction result:</h2><p>The result is:{result[0]}.<br>by {result[1]*100:.2f}%</p>"
 
+def create_dropdown(file_name, primary, index):
+    uniques = {}
+    df = pd.read_csv(file_name)
+    df = df.drop_duplicates()
+    df = df.drop(index, axis = 1)
+    df = df.drop(primary, axis = 1)
+    cols = df.columns
+    for col in cols:
+        uniques[col] = df[col].unique().tolist()
 
+    html = '<form method = "post">'
+    for col, unique in uniques.items():
+        html += f"""
+                    <label for="dropdown{col}"> {col}</label>
+                    <select name="dropdown{col}" id="dropdown{col}">
+                    """
+        for uni in unique:
+            html+= f"""<option value="{col}-{uni}">{col}-{uni}</option>"""
+        html+="""</select>
+                    <br>
+                """
+    return html
 def get_absolute_name(file_name : str):
     return "../csv/" + file_name + ".csv"
 

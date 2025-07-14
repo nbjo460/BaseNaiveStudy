@@ -5,20 +5,9 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="f8e86af8-499f-4358-8c2c-cd30fb41225a" name="Changes" comment="">
-      <change afterPath="$PROJECT_DIR$/Python/server.py" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/server/__init__.py" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/server/run_server.py" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.venv/Scripts/Python/Calc.py" beforeDir="false" afterPath="$PROJECT_DIR$/Python/Calc.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.venv/Scripts/Python/buy_computer_data.csv" beforeDir="false" afterPath="$PROJECT_DIR$/csv/buy_computer_data.csv" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.venv/Scripts/Python/buy_computer_data.json" beforeDir="false" afterPath="$PROJECT_DIR$/Python/buy_computer_data.json" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.venv/Scripts/Python/create_model.py" beforeDir="false" afterPath="$PROJECT_DIR$/Python/create_model.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.venv/Scripts/Python/execute_prompt.py" beforeDir="false" afterPath="$PROJECT_DIR$/Python/execute_prompt.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.venv/Scripts/Python/manager.py" beforeDir="false" afterPath="$PROJECT_DIR$/Python/manager.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.venv/Scripts/Python/phishing.csv" beforeDir="false" afterPath="$PROJECT_DIR$/csv/phishing.csv" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.venv/Scripts/Python/training.py" beforeDir="false" afterPath="$PROJECT_DIR$/Python/training.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.venv/Scripts/Python/verify.py" beforeDir="false" afterPath="$PROJECT_DIR$/Python/verify.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.venv/Scripts/server/run_server.py" beforeDir="false" afterPath="$PROJECT_DIR$/Python/__init__.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Python/create_model.py" beforeDir="false" afterPath="$PROJECT_DIR$/Python/create_model.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/server/run_server.py" beforeDir="false" afterPath="$PROJECT_DIR$/server/run_server.py" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />

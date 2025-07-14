@@ -23,6 +23,7 @@ def creates_model(file_name : str, primary_classified : str, index : str):
 def get_table(file_name : str, index : str):
     table = pd.read_csv(file_name)
     table = table.drop(index, axis=1)
+    table = table.drop_duplicates()
 
     return table
 def get_Pc(table: pd, primary: str, classified : list):
