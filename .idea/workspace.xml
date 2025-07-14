@@ -6,7 +6,11 @@
   <component name="ChangeListManager">
     <list default="true" id="f8e86af8-499f-4358-8c2c-cd30fb41225a" name="Changes" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Python/buy_computer_data.json" beforeDir="false" afterPath="$PROJECT_DIR$/Python/buy_computer_data.json" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Python/create_model.py" beforeDir="false" afterPath="$PROJECT_DIR$/Python/create_model.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Python/manager.py" beforeDir="false" afterPath="$PROJECT_DIR$/Python/manager.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Python/server.py" beforeDir="false" afterPath="$PROJECT_DIR$/Python/server.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/server/buy_computer_data.json" beforeDir="false" afterPath="$PROJECT_DIR$/server/buy_computer_data.json" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/server/run_server.py" beforeDir="false" afterPath="$PROJECT_DIR$/server/run_server.py" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
@@ -61,10 +65,12 @@
     "Python.Calc.executor": "Run",
     "Python.create_model.executor": "Run",
     "Python.execute_prompt.executor": "Run",
+    "Python.f.executor": "Run",
     "Python.manager.executor": "Run",
     "Python.run_server.executor": "Run",
     "Python.server.executor": "Run",
     "Python.training.executor": "Run",
+    "Python.try.executor": "Run",
     "Python.verify.executor": "Run",
     "RunOnceActivity.ShowReadmeOnStart": "true",
     "git-widget-placeholder": "master",

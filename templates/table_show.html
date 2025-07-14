@@ -1,0 +1,94 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="UTF-8" />
+    <title>{table_name}</title>
+</head>
+<body>
+    <form id="precentform">
+    {%for col, unique_values in uniques.items()%}
+        <label for="dropdown{{col}}"> {{col}}</label>
+        <select name="dropdown{{col}}" id="dropdown{{col}}" data-col = "{{col}}">
+            <option value="Empty">Empty</option>
+            {%for uni in unique_values%}
+            <option value="{{uni}}">{{col}}-{{uni}}</option>
+            {%endfor%}
+        </select>
+            {%endfor%}
+            <button type = "button" onclick="getprecent()" id ="sendbutton">Get precent</button>
+    </form> 
+<label for="classified">Classified by:</label>
+    <select name="classified" id = "classified">
+        <option value="Empty">Empty</option>
+        {%for col in cols%}
+        <option value="{{col}}">{{col}}</option>
+        {%endfor%}
+    </select>
+<label for="IGNORE">Ignore:</label>
+    <form name="IGNORE" id = "IGNORE">
+        {%for col in cols%}
+        <label for = "chrck_{{col}}">{{col}}</label>
+        <input type="checkbox" value="false" id="checl_{{col}}" data-col="{{col}}">
+        {%endfor%}
+    </form>
+
+    <div id = "result"></div>
+    <script>
+        let data = {}
+        let drops = {}
+        let selects = {}
+        let classified = ""
+
+        async function getprecent(){
+            const form = document.getElementById("precentform");
+            const unique = {{uniques | tojson}};
+            const file_name = "{{ table_name }}";
+            const primary = "{{ primary }}";
+            const index = "{{ index }}";
+            let drop_list = []
+            var url = `/prediction/${file_name}/${primary}/${index}/`
+            for (const drop in drops){
+                // url += `${key}=${data[key]}/`
+                    if (drops[drop]){
+                        drop_list.push(drop)
+                    }
+            }
+            
+            // alert(url);
+            data["selects"] = selects;
+            data["drops"] = drop_list
+            data["classified"] = classified
+            if(classified == "Empty" || classified == ""){
+                alert("no null")
+                return
+            }
+            const response = await fetch (url,
+            {method : "POST", body:JSON.stringify(data), headers:{"Content-Type": "application/json"}}
+            );
+            const result = await response.json();
+            console.log(result)
+            document.getElementById("result").innerText=`${result.result}`;
+            
+        }
+            
+        
+        
+        
+        document.querySelectorAll("select").forEach(function(selectElement){
+                selectElement.addEventListener("change", function() {
+                    selects[this.dataset.col] = this.value;
+                    if(this.id == "classified"){
+                    classified = this.value
+                    delete selects[this.dataset.col]
+                }
+                })
+            })
+
+        document.querySelectorAll("input[type='checkbox']").forEach(function(checkbox){
+                checkbox.addEventListener("change", function() {
+                drops[this.dataset.col] = this.checked;
+                })
+            })
+    </script>
+</body>
+</html>

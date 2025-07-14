@@ -1,14 +1,15 @@
 import os
+
+import fastapi
 import uvicorn
-from fastapi import FastAPI, Request
+from fastapi import FastAPI
 from fastapi.responses import HTMLResponse
-from fastapi.templating import Jinja2Templates
 from Python.server import Server
 import pandas as pd
 
 app = FastAPI()
 server = Server()
-templates = Jinja2Templates(directory="../templates")
+
 def list_csv_files(csv_folder : str):
     files_list = []
     for root, dir, files in os.walk(csv_folder):
@@ -19,7 +20,7 @@ def list_csv_files(csv_folder : str):
     return files_list
 
 @app.get("/", response_class= HTMLResponse)
-def show_csv_list():
+async def show_csv_list():
     names = list_csv_files("../csv")
     html_buttons = "".join([
         f'<form action="/{name}" method="get" style="display:inline;"><button>{name}</button></form>'
@@ -35,7 +36,7 @@ def show_csv_list():
             """
 
 @app.get("/{file_name}",response_class = HTMLResponse)
-def get_absolute_route(file_name, request : Request):
+def get_absolute_route(file_name):
     try:
         file_name = file_name.strip()
         absolute_name = get_absolute_name(file_name)
@@ -51,11 +52,8 @@ def get_absolute_route(file_name, request : Request):
         out = (f"The table is: {file_name}. <br>"
                f"The columns are:<br>{columns_shows}.<br>"
                f'<a href="/{columns_routes}" style="margin: 10px; display: inline-block; color:red; font-size : 20px;">{columns_routes}</a>')
-        drops, cols = create_dropdown(absolute_name, primary_cls, index_route)
-        # html = out + drops
-        # return html
-        return templates.TemplateResponse("table_show.html",
-                                          {"request":request, "table_name":file_name, "uniques" : drops, "primary" : primary_cls, "index" : index_route, "cols" : cols})
+        drops = create_dropdown(absolute_name, primary_cls, index_route)
+        return out + drops
     except:
         return f"No table: {file_name}"
 
@@ -68,43 +66,31 @@ def get_prediction(file_name ,primary : str, index : str, keys : str):
         if '=' in pair:
             tmp = pair.split("=", 1)
             params[tmp[0]] = tmp[1] if tmp[1] != "" else "Empty"
-    result = server.run_server(file_name, primary, index, **params)
+    result = server.run_server(file_name, index, primary, **params)
     return f"<h2>Prediction result:</h2><p>The result is:{result[0]}.<br>by {result[1]*100:.2f}%</p>"
-    # return result
-
-@app.post("/prediction/{file_name}/{primary}/{index}/{keys:path}")
-async def post_prediction(file_name ,primary : str, index : str,  request : Request, keys:str):
-    params = dict(await request.json())
-
-    sel = params["selects"]
-    drops = params["drops"]
-    classified = params["classified"]
-    file_name = get_absolute_name(file_name)
-    result = server.run_server(file_name, classified, drops, **sel)
-    return {"result": result}
 
 def create_dropdown(file_name, primary, index):
     uniques = {}
     df = pd.read_csv(file_name)
     df = df.drop_duplicates()
-    cols = df.columns.tolist()
+    df = df.drop(index, axis = 1)
+    df = df.drop(primary, axis = 1)
+    cols = df.columns
     for col in cols:
         uniques[col] = df[col].unique().tolist()
 
-    # html = '<form method = "post">'
-    # for col, unique in uniques.items():
-    #     html += f"""
-    #                 <label for="dropdown{col}"> {col}</label>
-    #                 <select name="dropdown{col}" id="dropdown{col}">
-    #                 """
-    #     for uni in unique:
-    #         html+= f"""<option value="{col}-{uni}">{col}-{uni}</option>"""
-    #     html+="""</select>
-    #                 <br>
-    #             """
-    # return html
-    return uniques,cols
-
+    html = '<form method = "post">'
+    for col, unique in uniques.items():
+        html += f"""
+                    <label for="dropdown{col}"> {col}</label>
+                    <select name="dropdown{col}" id="dropdown{col}">
+                    """
+        for uni in unique:
+            html+= f"""<option value="{col}-{uni}">{col}-{uni}</option>"""
+        html+="""</select>
+                    <br>
+                """
+    return html
 def get_absolute_name(file_name : str):
     return "../csv/" + file_name + ".csv"
 
