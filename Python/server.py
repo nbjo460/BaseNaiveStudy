@@ -12,7 +12,7 @@ class Server:
         if required_model not in self.models:
             model = cm.run(file_name, primary_classified, drops)
             self.models[required_model] = (model, primary_classified)
-            print("New model created" + file_name)
+            print("New model created: " + file_name)
         result = self.execute_for_server(self.models[required_model][0], self.models[required_model][1], **kwargs)
         return result
 

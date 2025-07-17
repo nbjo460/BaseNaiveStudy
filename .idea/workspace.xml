@@ -5,13 +5,18 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="f8e86af8-499f-4358-8c2c-cd30fb41225a" name="Changes" comment="">
+      <change afterPath="$PROJECT_DIR$/Python/clean_table.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Python/create_table.py" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Python/buy_computer_data.json" beforeDir="false" afterPath="$PROJECT_DIR$/Python/buy_computer_data.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Python/buy_computer_data.json" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/Python/create_model.py" beforeDir="false" afterPath="$PROJECT_DIR$/Python/create_model.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Python/manager.py" beforeDir="false" afterPath="$PROJECT_DIR$/Python/manager.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Python/execute_prompt.py" beforeDir="false" afterPath="$PROJECT_DIR$/Python/execute_prompt.py" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Python/server.py" beforeDir="false" afterPath="$PROJECT_DIR$/Python/server.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Python/training.py" beforeDir="false" afterPath="$PROJECT_DIR$/Python/training.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Python/try.py" beforeDir="false" afterPath="$PROJECT_DIR$/Python/try.py" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/server/buy_computer_data.json" beforeDir="false" afterPath="$PROJECT_DIR$/server/buy_computer_data.json" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/server/run_server.py" beforeDir="false" afterPath="$PROJECT_DIR$/server/run_server.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/templates/table_show.html" beforeDir="false" afterPath="$PROJECT_DIR$/templates/table_show.html" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -28,18 +33,18 @@
   <component name="Git.Settings">
     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
   </component>
-  <component name="GitHubPullRequestSearchHistory"><![CDATA[{
-  "lastFilter": {
-    "state": "OPEN",
-    "assignee": "nbjo460"
+  <component name="GitHubPullRequestSearchHistory">{
+  &quot;lastFilter&quot;: {
+    &quot;state&quot;: &quot;OPEN&quot;,
+    &quot;assignee&quot;: &quot;nbjo460&quot;
   }
-}]]></component>
-  <component name="GithubPullRequestsUISettings"><![CDATA[{
-  "selectedUrlAndAccountId": {
-    "url": "https://github.com/nbjo460/BaseNaiveStudy.git",
-    "accountId": "23d6cf09-552e-42f5-9eda-87dd5a8aaf57"
+}</component>
+  <component name="GithubPullRequestsUISettings">{
+  &quot;selectedUrlAndAccountId&quot;: {
+    &quot;url&quot;: &quot;https://github.com/nbjo460/BaseNaiveStudy.git&quot;,
+    &quot;accountId&quot;: &quot;23d6cf09-552e-42f5-9eda-87dd5a8aaf57&quot;
   }
-}]]></component>
+}</component>
   <component name="HighlightingSettingsPerFile">
     <setting file="file://$PROJECT_DIR$/.venv/Scripts/Python/Calc.py" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/.venv/Scripts/Python/buy_computer_data.csv" root0="FORCE_HIGHLIGHTING" />
@@ -51,38 +56,41 @@
     <setting file="file://$PROJECT_DIR$/.venv/Scripts/Python/verify.py" root0="SKIP_INSPECTION" />
     <setting file="file://$PROJECT_DIR$/.venv/Scripts/activate_this.py" root0="FORCE_HIGHLIGHTING" />
   </component>
-  <component name="ProjectColorInfo"><![CDATA[{
-  "associatedIndex": 4
-}]]></component>
+  <component name="ProjectColorInfo">{
+  &quot;associatedIndex&quot;: 4
+}</component>
   <component name="ProjectId" id="2zaGnI3q0fyCcR0MmYRLSkQoIAp" />
   <component name="ProjectLevelVcsManager" settingsEditedManually="true" />
   <component name="ProjectViewState">
     <option name="hideEmptyMiddlePackages" value="true" />
     <option name="showLibraryContents" value="true" />
   </component>
-  <component name="PropertiesComponent"><![CDATA[{
-  "keyToString": {
-    "Python.Calc.executor": "Run",
-    "Python.create_model.executor": "Run",
-    "Python.execute_prompt.executor": "Run",
-    "Python.f.executor": "Run",
-    "Python.manager.executor": "Run",
-    "Python.run_server.executor": "Run",
-    "Python.server.executor": "Run",
-    "Python.training.executor": "Run",
-    "Python.try.executor": "Run",
-    "Python.verify.executor": "Run",
-    "RunOnceActivity.ShowReadmeOnStart": "true",
-    "git-widget-placeholder": "master",
-    "last_opened_file_path": "C:/Users/Menachem/Desktop/Galil/BaseNaiveStudy/.venv/Scripts/Python"
+  <component name="PropertiesComponent">{
+  &quot;keyToString&quot;: {
+    &quot;Python.Calc.executor&quot;: &quot;Run&quot;,
+    &quot;Python.clean_table.executor&quot;: &quot;Run&quot;,
+    &quot;Python.create_model.executor&quot;: &quot;Run&quot;,
+    &quot;Python.create_table.executor&quot;: &quot;Run&quot;,
+    &quot;Python.execute_prompt.executor&quot;: &quot;Run&quot;,
+    &quot;Python.f.executor&quot;: &quot;Run&quot;,
+    &quot;Python.manager.executor&quot;: &quot;Run&quot;,
+    &quot;Python.run_server.executor&quot;: &quot;Run&quot;,
+    &quot;Python.server.executor&quot;: &quot;Run&quot;,
+    &quot;Python.training.executor&quot;: &quot;Run&quot;,
+    &quot;Python.try.executor&quot;: &quot;Run&quot;,
+    &quot;Python.verify.executor&quot;: &quot;Run&quot;,
+    &quot;RunOnceActivity.ShowReadmeOnStart&quot;: &quot;true&quot;,
+    &quot;git-widget-placeholder&quot;: &quot;master&quot;,
+    &quot;last_opened_file_path&quot;: &quot;C:/Users/Menachem/Desktop/Galil/BaseNaiveStudy/.venv/Scripts/Python&quot;
   }
-}]]></component>
+}</component>
   <component name="RecentsManager">
     <key name="CopyFile.RECENT_KEYS">
       <recent name="C:\Users\Menachem\Desktop\Galil\BaseNaiveStudy\.venv\Scripts\Python" />
       <recent name="C:\Users\Menachem\Desktop\Galil\BaseNaiveStudy\.venv\Scripts" />
     </key>
     <key name="MoveFile.RECENT_KEYS">
+      <recent name="C:\Users\Menachem\Desktop\Galil\BaseNaiveStudy\static\css" />
       <recent name="C:\Users\Menachem\Desktop\Galil\BaseNaiveStudy" />
       <recent name="C:\Users\Menachem\Desktop\Galil\BaseNaiveStudy\csv" />
       <recent name="C:\Users\Menachem\Desktop\Galil\BaseNaiveStudy\.venv\Scripts\Python" />

@@ -15,10 +15,13 @@ class train:
         types_class = {}
 
         for cls in classified:
+            # cls = str(cls)
             types_class[cls] = {}
             for col,val in uniques.items():
+                # col = str(col)
                 bug = train.get_zero_bug_cols(table, uniques, col, primary, cls)
                 for v in val:
+                    # v = str(v)
                     if col not in types_class[cls]: types_class[cls][col] = {}
 
                     types_class[cls][col][v] = train.get_spesificly_Px(table, left_column_name=col, left_value=v, right_column_name=primary,
@@ -32,6 +35,8 @@ class train:
         for col in table.columns:
             if col == primary: continue
             uniques[col] = table[col].unique()
+            # uniques[col] = table[col].unique().tolist()
+            # print(type(uniques[col]))
         return uniques, classified
 
     @staticmethod
@@ -50,7 +55,6 @@ class train:
         right_count = len(right_table)
         left_count = len(right_table[right_table[left_column_name] == left_value])
         return left_count / right_count if not zero_bug else (left_count+1) /(right_count+1)
-
 
     @staticmethod
     def save_json(Px : dict):

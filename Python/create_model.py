@@ -1,7 +1,10 @@
 import pandas as pd
 from Python import execute_prompt
 from Python import verify as vf
+import Python.create_table
 import numpy as np
+
+from Python.create_table import create_table
 from Python.training import train as tr
 
 
@@ -21,16 +24,17 @@ def creates_model(file_name : str, primary_classified : str, drops : list):
     return model, dfs["verify"], table
 
 def get_table(file_name : str, drops : list):
-    table = pd.read_csv(file_name)
-    table = clean_table(table, drops)
+    ct = create_table()
+    table = ct.create(file_name)
+    table = drop_cols_by_ignore_list(table, drops)
     return table
-def clean_table(table : pd, drops : list):
+
+def drop_cols_by_ignore_list(table : pd, drops : list):
     for index in drops:
         try:
             table = table.drop(index, axis=1)
-        except:
-            pass
-    table = table.drop_duplicates()
+        except Exception as e :
+            print("can't drop index: " + e)
     return table
 
 def get_Pc(table: pd, primary: str, classified : list):

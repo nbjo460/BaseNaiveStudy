@@ -3,12 +3,16 @@ import uvicorn
 from fastapi import FastAPI, Request
 from fastapi.responses import HTMLResponse
 from fastapi.templating import Jinja2Templates
+from fastapi.staticfiles import StaticFiles
+
+from Python.create_table import create_table as ct
 from Python.server import Server
-import pandas as pd
 
 app = FastAPI()
 server = Server()
 templates = Jinja2Templates(directory="../templates")
+app.mount("/static", StaticFiles(directory="../static"), name="static")
+
 def list_csv_files(csv_folder : str):
     files_list = []
     for root, dir, files in os.walk(csv_folder):
@@ -36,34 +40,18 @@ def show_csv_list():
 
 @app.get("/{file_name}",response_class = HTMLResponse)
 def get_absolute_route(file_name, request : Request):
-    try:
-        file_name = file_name.strip()
-        absolute_name = get_absolute_name(file_name)
-        with open(absolute_name, "r") as f:
-            columns_names = f.readline()
-            columns_splitted = columns_names.strip().split(',')
-            index_route = columns_splitted[0]
-            primary_cls = columns_splitted[-1]
-            columns_splitted = columns_splitted[1:-1]
-            columns_shows = ' ,'.join(columns_splitted)
-            end = "=XXX"
-            columns_routes = f"prediction/{file_name}/{index_route}/{primary_cls}/{f"{end}/".join(columns_splitted)}{end}"
-        out = (f"The table is: {file_name}. <br>"
-               f"The columns are:<br>{columns_shows}.<br>"
-               f'<a href="/{columns_routes}" style="margin: 10px; display: inline-block; color:red; font-size : 20px;">{columns_routes}</a>')
-        drops, cols = create_dropdown(absolute_name, primary_cls, index_route)
-        # html = out + drops
-        # return html
+    # try:
+        drops, cols = create_dropdown(file_name)
         return templates.TemplateResponse("table_show.html",
-                                          {"request":request, "table_name":file_name, "uniques" : drops, "primary" : primary_cls, "index" : index_route, "cols" : cols})
-    except:
-        return f"No table: {file_name}"
+                                          {"request":request, "table_name":file_name, "uniques" : drops,"cols" : cols})
+    # except Exception as e:
+    #     return f"No table: {file_name}\n {e}"
 
 @app.get("/prediction/{file_name}/{primary}/{index}/{keys:path}", response_class = HTMLResponse)
 def get_prediction(file_name ,primary : str, index : str, keys : str):
     pairs = keys.split("/")
     params = {}
-    file_name = get_absolute_name(file_name)
+    # file_name = get_absolute_name(file_name)
     for pair in pairs:
         if '=' in pair:
             tmp = pair.split("=", 1)
@@ -72,41 +60,24 @@ def get_prediction(file_name ,primary : str, index : str, keys : str):
     return f"<h2>Prediction result:</h2><p>The result is:{result[0]}.<br>by {result[1]*100:.2f}%</p>"
     # return result
 
-@app.post("/prediction/{file_name}/{primary}/{index}/{keys:path}")
-async def post_prediction(file_name ,primary : str, index : str,  request : Request, keys:str):
+@app.post("/prediction/{file_name}/{keys:path}")
+async def post_prediction(file_name, request : Request, keys:str):
     params = dict(await request.json())
 
     sel = params["selects"]
     drops = params["drops"]
     classified = params["classified"]
-    file_name = get_absolute_name(file_name)
     result = server.run_server(file_name, classified, drops, **sel)
     return {"result": result}
 
-def create_dropdown(file_name, primary, index):
+def create_dropdown(file_name):
     uniques = {}
-    df = pd.read_csv(file_name)
-    df = df.drop_duplicates()
+    a = ct()
+    df = a.create(file_name)
     cols = df.columns.tolist()
     for col in cols:
         uniques[col] = df[col].unique().tolist()
-
-    # html = '<form method = "post">'
-    # for col, unique in uniques.items():
-    #     html += f"""
-    #                 <label for="dropdown{col}"> {col}</label>
-    #                 <select name="dropdown{col}" id="dropdown{col}">
-    #                 """
-    #     for uni in unique:
-    #         html+= f"""<option value="{col}-{uni}">{col}-{uni}</option>"""
-    #     html+="""</select>
-    #                 <br>
-    #             """
-    # return html
     return uniques,cols
-
-def get_absolute_name(file_name : str):
-    return "../csv/" + file_name + ".csv"
 
 
 if __name__ == "__main__":

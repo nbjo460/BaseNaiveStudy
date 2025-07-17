@@ -2,20 +2,21 @@
 <html>
 <head>
     <meta charset="UTF-8" />
-    <title>{table_name}</title>
+    <title id ="title">{{table_name}}</title>
+    <link rel="stylesheet" href="/static/css/styles.css" />
 </head>
 <body>
+    <div class="container">
     <form id="precentform">
     {%for col, unique_values in uniques.items()%}
         <label for="dropdown{{col}}"> {{col}}</label>
         <select name="dropdown{{col}}" id="dropdown{{col}}" data-col = "{{col}}">
             <option value="Empty">Empty</option>
             {%for uni in unique_values%}
-            <option value="{{uni}}">{{col}}-{{uni}}</option>
+            <option value="{{uni}}">{{uni}}</option>
             {%endfor%}
         </select>
             {%endfor%}
-            <button type = "button" onclick="getprecent()" id ="sendbutton">Get precent</button>
     </form> 
 <label for="classified">Classified by:</label>
     <select name="classified" id = "classified">
@@ -31,9 +32,28 @@
         <input type="checkbox" value="false" id="checl_{{col}}" data-col="{{col}}">
         {%endfor%}
     </form>
+    <button type = "button" onclick="getprecent()" id ="sendbutton">Get precent</button>
 
     <div id = "result"></div>
+    </div>
     <script>
+
+        function EditTitle(){
+            let title  = document.title
+            let current_title = title
+            let new_title = ""
+
+            let tmp = current_title.split("_")
+            let tmp1 = ""
+            for(let i =0; i < tmp.length; i++){
+                let word = tmp[i]
+                word = word.charAt(0).toUpperCase() + word.slice(1) + " ";
+                tmp1 += word
+            }
+            tmp1.trim()
+            document.title = tmp1
+        }
+        EditTitle()
         let data = {}
         let drops = {}
         let selects = {}
@@ -41,7 +61,7 @@
 
         async function getprecent(){
             const form = document.getElementById("precentform");
-            const unique = {{uniques | tojson}};
+            const unique = {{uniques | tojson}}
             const file_name = "{{ table_name }}";
             const primary = "{{ primary }}";
             const index = "{{ index }}";
@@ -67,28 +87,81 @@
             );
             const result = await response.json();
             console.log(result)
-            document.getElementById("result").innerText=`${result.result}`;
-            
+            document.getElementById("result").innerText=`${result.result}`; 
         }
             
         
         
-        
+        let last_change = ""
         document.querySelectorAll("select").forEach(function(selectElement){
                 selectElement.addEventListener("change", function() {
                     selects[this.dataset.col] = this.value;
+                    
                     if(this.id == "classified"){
                     classified = this.value
-                    delete selects[this.dataset.col]
-                }
+                    delete selects[undefined]
+
+                    col = this.value
+
+                    TurnOffDropDownCol(col)
+                    TurnOnDropDownCol(last_change)
+
+                                        
+                    last_change = col
+                    }
                 })
             })
 
         document.querySelectorAll("input[type='checkbox']").forEach(function(checkbox){
                 checkbox.addEventListener("change", function() {
                 drops[this.dataset.col] = this.checked;
+                if(this.checked){
+                    TurnOffCol(this.dataset.col);
+                    TurnOffDropDownCol(this.dataset.col);
+                    DeleteFromDataIfExist(this.dataset.col);
+                }else{
+                    TurnOnCol(this.dataset.col);
+                    TurnOnDropDownCol(this.dataset.col);
+                }
                 })
             })
+            const classifiedDropDown = document.getElementById("classified")
+            
+            function TurnOnCol(ColName){
+                            const option = classifiedDropDown.querySelector(`option[value="${ColName}"]`);
+                            option.disabled = false;
+                        }
+            function TurnOffCol(ColName){
+                if(classifiedDropDown.value == ColName){
+                    classifiedDropDown.value = "Empty"
+                }
+                const option = classifiedDropDown.querySelector(`option[value="${ColName}"]`);
+                            option.disabled = true;
+            }
+            
+            function TurnOffDropDownCol(ColName){
+                if (ColName != ""){
+                let dropDown = document.getElementById(`dropdown${ColName}`)
+                dropDown.disabled = true
+            }
+            }
+            function TurnOnDropDownCol(ColName){
+                if(ColName != ""){
+                let dropDown = document.getElementById(`dropdown${ColName}`)
+                dropDown.disabled = false
+                }
+            }
+            
+
+            
+            function DeleteFromDataIfExist(ColName){
+                if(ColName in data["selects"]){
+                    delete data["selects"][ColName]
+                }
+                if(ColName == data["classified"]){
+                    data["classified"] = "Empty";
+                }
+            }
     </script>
 </body>
 </html>

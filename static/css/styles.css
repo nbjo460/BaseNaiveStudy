@@ -1,0 +1,183 @@
+body {
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    display: flex;
+    justify-content: center;
+    align-items: center; /* Center vertically */
+    min-height: 100vh; /* Full viewport height */
+    margin: 0;
+    padding: 20px;
+    background: linear-gradient(135deg, #f0f8ff 0%, #e0ffff 100%); /* Light, airy gradient background */
+    box-sizing: border-box;
+}
+
+.container {
+    display: flex;
+    flex-wrap: wrap; /* Allow items to wrap to the next line */
+    gap: 25px; /* More space between elements */
+    background-color: #ffffff;
+    padding: 40px;
+    border-radius: 15px;
+    box-shadow: 0 8px 20px rgba(0, 0, 0, 0.15); /* Stronger shadow for depth */
+    max-width: 95%; /* Wider container */
+    width: 100%;
+    justify-content: center; /* Center items horizontally within the container */
+    align-items: center; /* Center items vertically within their line */
+}
+
+/* Base styles for forms and elements */
+form, .container > label, .container > select, .container > button {
+    display: flex;
+    flex-wrap: wrap; /* Allows internal elements to wrap */
+    gap: 15px; /* Space between elements inside forms/groups */
+    align-items: center;
+    justify-content: flex-start; /* Align contents to the start */
+}
+
+/* Specific styling for forms containing selects (precentform) */
+form#precentform {
+    flex-grow: 1; /* Allow this form to take up available space */
+    justify-content: center; /* Center dropdowns if there's extra space */
+}
+
+label {
+    font-weight: 600; /* Slightly bolder */
+    color: #4a4a4a;
+    white-space: nowrap;
+    margin-right: 5px; /* Space between label and its control */
+}
+
+select {
+    padding: 12px 18px;
+    border: 2px solid #a0d9e4; /* Pleasant blue border */
+    border-radius: 8px;
+    font-size: 1.05rem;
+    background-color: #e6f7ff; /* Light blue background */
+    color: #333;
+    cursor: pointer;
+    min-width: 180px; /* Ensure a decent minimum width */
+    transition: all 0.3s ease;
+    appearance: none; /* Remove default select arrow */
+    background-image: url('data:image/svg+xml;charset=US-ASCII,%3Csvg%20xmlns%3D%22http%3A%2F%2Fwww.w3.org%2F2000%2Fsvg%22%20width%3D%22292.4%22%20height%3D%22292.4%22%3E%3Cpath%20fill%3D%22%234a4a4a%22%20d%3D%22M287%2C197.9c-3.2%2C3.2-8.3%2C3.2-11.6%2C0L146.2%2C68.9L16.9%2C197.9c-3.2%2C3.2-8.3%2C3.2-11.6%2C0c-3.2-3.2-3.2-8.3%2C0-11.6l135.5-135.5c1.6-1.6%2C3.7-2.4%2C5.8-2.4c2.1%2C0%2C4.2%2C0.8%2C5.8%2C2.4l135.5%2C135.5C290.2%2C189.6%2C290.2%2C194.7%2C287%2C197.9z%22%2F%3E%3C%2Fsvg%3E');
+    background-repeat: no-repeat;
+    background-position: right 10px top 50%;
+    background-size: 12px auto;
+}
+
+select:hover {
+    border-color: #007bff;
+    background-color: #d9edf7;
+}
+
+select:focus {
+    outline: none;
+    border-color: #0056b3;
+    box-shadow: 0 0 0 3px rgba(0, 123, 255, 0.25);
+}
+
+input[type="checkbox"] {
+    transform: scale(1.3);
+    accent-color: #28a745; /* Green accent for checkboxes */
+    margin-right: 8px;
+}
+
+/* Styling for the "Ignore" section to keep labels and checkboxes together */
+form[name="IGNORE"] {
+    flex-grow: 1; /* Allow this form to take up space */
+    justify-content: center; /* Center its contents */
+    gap: 25px; /* Wider gap between each checkbox-label pair */
+}
+
+form[name="IGNORE"] div { /* Group label and checkbox */
+    display: flex;
+    align-items: center;
+    white-space: nowrap;
+}
+
+button {
+    background-color: #6f42c1; /* Deep purple button */
+    color: white;
+    padding: 15px 30px;
+    border: none;
+    border-radius: 8px;
+    font-size: 1.2rem;
+    font-weight: bold;
+    cursor: pointer;
+    transition: background-color 0.3s ease, transform 0.2s ease;
+    flex-shrink: 0;
+    margin-top: 10px; /* Space above the button */
+}
+
+button:hover {
+    background-color: #5a2f9c;
+    transform: translateY(-2px);
+}
+
+button:active {
+    transform: translateY(0);
+}
+
+#result {
+    margin-top: 30px;
+    padding: 20px;
+    background-color: #d4edda; /* Soft green for result background */
+    border-radius: 10px;
+    width: 100%;
+    text-align: center;
+    font-size: 1.3rem;
+    color: #155724; /* Dark green for result text */
+    font-weight: 500;
+    box-sizing: border-box;
+    border: 1px solid #c3e6cb;
+}
+
+/* Responsive adjustments */
+@media (max-width: 1024px) {
+    .container {
+        gap: 20px; /* Reduce gap slightly */
+        padding: 30px;
+    }
+
+    select, button {
+        min-width: unset; /* Allow them to shrink more */
+    }
+}
+
+@media (max-width: 768px) {
+    .container {
+        flex-direction: column; /* Stack major sections vertically */
+        align-items: stretch;
+        padding: 25px;
+        gap: 20px;
+    }
+
+    form#precentform, form[name="IGNORE"] {
+        flex-direction: column; /* Stack dropdowns/checkboxes vertically within their forms */
+        align-items: stretch;
+        gap: 10px;
+    }
+
+    select {
+        width: 100%; /* Full width for selects on small screens */
+    }
+
+    button {
+        width: auto; /* Button can remain auto width */
+        align-self: center; /* Center the button if column layout */
+    }
+}
+
+@media (max-width: 480px) {
+    .container {
+        padding: 15px;
+        gap: 15px;
+    }
+
+    button {
+        padding: 12px 25px;
+        font-size: 1.1rem;
+    }
+
+    label, select, input {
+        font-size: 0.95rem;
+    }
+}
