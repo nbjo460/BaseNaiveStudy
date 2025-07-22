@@ -34,7 +34,7 @@ def drop_cols_by_ignore_list(table : pd, drops : list):
         try:
             table = table.drop(index, axis=1)
         except Exception as e :
-            print("can't drop index: " + e)
+            print("can't drop index: " + e.__str__())
     return table
 
 def get_Pc(table: pd, primary: str, classified : list):

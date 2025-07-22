@@ -29,4 +29,4 @@ class create_table:
     @staticmethod
     def get_absolute_name(file_name : str):
         file_name = file_name.strip()
-        return "../csv/" + file_name + ".csv"
+        return "/app/csv/" + file_name + ".csv"

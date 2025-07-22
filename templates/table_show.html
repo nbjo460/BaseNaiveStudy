@@ -28,7 +28,7 @@
 <label for="IGNORE">Ignore:</label>
     <form name="IGNORE" id = "IGNORE">
         {%for col in cols%}
-        <label for = "chrck_{{col}}">{{col}}</label>
+        <label for = "check_{{col}}">{{col}}</label>
         <input type="checkbox" value="false" id="checl_{{col}}" data-col="{{col}}">
         {%endfor%}
     </form>

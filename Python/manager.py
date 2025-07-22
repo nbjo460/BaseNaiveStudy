@@ -1,15 +1,15 @@
 import create_model as cm
 import execute_prompt as pt
 
-file_name = "../csv/buy_computer_data.csv"
+file_name = "buy_computer_data"
 primary_classified = "exist"
 index = "id"
 
-file_name = "../csv/phishing.csv"
+file_name = "phishing"
 primary_classified = "class"
 index = "Index"
 
-file_name = "../csv/titanic.csv"
+file_name = "titanic"
 primary_classified = "Survived"
 index = "Name"
 

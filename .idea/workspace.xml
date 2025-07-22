@@ -5,15 +5,14 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="f8e86af8-499f-4358-8c2c-cd30fb41225a" name="Changes" comment="">
-      <change afterPath="$PROJECT_DIR$/Python/clean_table.py" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Python/create_table.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/dockerfile" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/requirements.txt" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Python/buy_computer_data.json" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.venv/.gitignore" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.venv/Scripts/fastapi.exe" beforeDir="false" afterPath="$PROJECT_DIR$/.venv/Scripts/fastapi.exe" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Python/create_model.py" beforeDir="false" afterPath="$PROJECT_DIR$/Python/create_model.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Python/execute_prompt.py" beforeDir="false" afterPath="$PROJECT_DIR$/Python/execute_prompt.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Python/server.py" beforeDir="false" afterPath="$PROJECT_DIR$/Python/server.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Python/training.py" beforeDir="false" afterPath="$PROJECT_DIR$/Python/training.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Python/try.py" beforeDir="false" afterPath="$PROJECT_DIR$/Python/try.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Python/create_table.py" beforeDir="false" afterPath="$PROJECT_DIR$/Python/create_table.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Python/manager.py" beforeDir="false" afterPath="$PROJECT_DIR$/Python/manager.py" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/server/buy_computer_data.json" beforeDir="false" afterPath="$PROJECT_DIR$/server/buy_computer_data.json" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/server/run_server.py" beforeDir="false" afterPath="$PROJECT_DIR$/server/run_server.py" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/templates/table_show.html" beforeDir="false" afterPath="$PROJECT_DIR$/templates/table_show.html" afterDir="false" />
@@ -65,25 +64,26 @@
     <option name="hideEmptyMiddlePackages" value="true" />
     <option name="showLibraryContents" value="true" />
   </component>
-  <component name="PropertiesComponent">{
-  &quot;keyToString&quot;: {
-    &quot;Python.Calc.executor&quot;: &quot;Run&quot;,
-    &quot;Python.clean_table.executor&quot;: &quot;Run&quot;,
-    &quot;Python.create_model.executor&quot;: &quot;Run&quot;,
-    &quot;Python.create_table.executor&quot;: &quot;Run&quot;,
-    &quot;Python.execute_prompt.executor&quot;: &quot;Run&quot;,
-    &quot;Python.f.executor&quot;: &quot;Run&quot;,
-    &quot;Python.manager.executor&quot;: &quot;Run&quot;,
-    &quot;Python.run_server.executor&quot;: &quot;Run&quot;,
-    &quot;Python.server.executor&quot;: &quot;Run&quot;,
-    &quot;Python.training.executor&quot;: &quot;Run&quot;,
-    &quot;Python.try.executor&quot;: &quot;Run&quot;,
-    &quot;Python.verify.executor&quot;: &quot;Run&quot;,
-    &quot;RunOnceActivity.ShowReadmeOnStart&quot;: &quot;true&quot;,
-    &quot;git-widget-placeholder&quot;: &quot;master&quot;,
-    &quot;last_opened_file_path&quot;: &quot;C:/Users/Menachem/Desktop/Galil/BaseNaiveStudy/.venv/Scripts/Python&quot;
+  <component name="PropertiesComponent"><![CDATA[{
+  "keyToString": {
+    "Python.Calc.executor": "Run",
+    "Python.clean_table.executor": "Run",
+    "Python.create_model.executor": "Run",
+    "Python.create_table.executor": "Run",
+    "Python.execute_prompt.executor": "Run",
+    "Python.f.executor": "Run",
+    "Python.manager.executor": "Run",
+    "Python.run_server.executor": "Run",
+    "Python.server.executor": "Run",
+    "Python.training.executor": "Run",
+    "Python.try.executor": "Run",
+    "Python.verify.executor": "Run",
+    "RunOnceActivity.ShowReadmeOnStart": "true",
+    "git-widget-placeholder": "docker",
+    "last_opened_file_path": "C:/Users/Menachem/Desktop/Galil/BaseNaiveStudy",
+    "settings.editor.selected.configurable": "preferences.pluginManager"
   }
-}</component>
+}]]></component>
   <component name="RecentsManager">
     <key name="CopyFile.RECENT_KEYS">
       <recent name="C:\Users\Menachem\Desktop\Galil\BaseNaiveStudy\.venv\Scripts\Python" />
