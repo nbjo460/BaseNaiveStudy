@@ -5,15 +5,19 @@ from fastapi.responses import HTMLResponse
 from fastapi.templating import Jinja2Templates
 from fastapi.staticfiles import StaticFiles
 from fastapi.responses import FileResponse
-
+import Python.properties
 
 from Python.create_table import create_table as ct
+from Python.properties import properties_of_runner
 from Python.server import Server
 
 app = FastAPI()
 server = Server()
-templates = Jinja2Templates(directory="/app/templates")
-app.mount("/static", StaticFiles(directory="/app/static"), name="static")
+
+runner_platform = "main" if (__name__ == "__main__") else "server"
+
+templates = Jinja2Templates(directory=properties_of_runner(runner_platform, "templates"))
+app.mount("/static", StaticFiles(directory=properties_of_runner(runner_platform, "static")), name="static")
 
 def list_csv_files(csv_folder : str):
     files_list = []
@@ -31,7 +35,7 @@ async def favicon():
 
 @app.get("/", response_class= HTMLResponse)
 def show_csv_list():
-    names = list_csv_files("/app/csv")
+    names = list_csv_files(properties_of_runner(runner_platform, "csv"))
     html_buttons = "".join([
         f'<form action="/{name}" method="get" style="display:inline;"><button>{name}</button></form>'
         for name in names
@@ -39,7 +43,7 @@ def show_csv_list():
     return f"""
 <html>
 <body>
-<h1>buttons</h1>
+<h1>TABLES</h1>
 {html_buttons}
 </body>
 </html>
@@ -74,18 +78,18 @@ async def post_prediction(file_name, request : Request, keys:str):
     sel = params["selects"]
     drops = params["drops"]
     classified = params["classified"]
-    result = server.run_server(file_name, classified, drops, **sel)
+    result = server.run_server(file_name, classified, drops, runner_platform, **sel)
     return {"result": result}
 
 def create_dropdown(file_name):
     uniques = {}
     a = ct()
-    df = a.create(file_name)
+    df = a.create(file_name, runner_platform)
     cols = df.columns.tolist()
     for col in cols:
         uniques[col] = df[col].unique().tolist()
     return uniques,cols
 
 
-# if __name__ == "__main__":
-    # uvicorn.run(app, host = "127.0.0.1", port = 8001)
+if __name__ == "__main__":
+    uvicorn.run(app, host = "127.0.0.1", port = 8001)
