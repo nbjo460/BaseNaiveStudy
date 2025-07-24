@@ -1,3 +1,5 @@
+# import traceback
+
 import pandas as pd
 from Python.prediction import verify as vf
 
@@ -19,8 +21,8 @@ class Create_model:
         dfs = Create_model.split_table(table)
 
         # calculate_model = tr.trainer(dfs["train"], primary_classified)
-        model = tr.trainer(Create_model.get_table(file_name, drops, runner_platform), primary_classified)
-        return model, dfs["verify"], table
+        calculate_model = tr.trainer(table, primary_classified)
+        return calculate_model, dfs["verify"], table
 
     @staticmethod
     def get_table(file_name : str, drops : list, runner_platform):
@@ -35,6 +37,7 @@ class Create_model:
             try:
                 table = table.drop(index, axis=1)
             except Exception as e :
+                # traceback.print_stack(limit=3)  # מראה 3 שלבים אחורה
                 print("can't drop index: " + e.__str__())
         return table
 

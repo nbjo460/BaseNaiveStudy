@@ -6,22 +6,9 @@
   <component name="ChangeListManager">
     <list default="true" id="f8e86af8-499f-4358-8c2c-cd30fb41225a" name="Changes" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Python/CODE.zip" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Python/Calc.py" beforeDir="false" afterPath="$PROJECT_DIR$/Python/utils/Calc.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Python/buy_computer_data.json" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Python/clean_table.py" beforeDir="false" afterPath="$PROJECT_DIR$/Python/calculate_model/clean_table.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Python/create_model.py" beforeDir="false" afterPath="$PROJECT_DIR$/Python/calculate_model/create_model.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Python/create_table.py" beforeDir="false" afterPath="$PROJECT_DIR$/Python/calculate_model/create_table.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Python/execute_prompt.py" beforeDir="false" afterPath="$PROJECT_DIR$/Python/prediction/execute_prompt.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Python/f.py" beforeDir="false" afterPath="$PROJECT_DIR$/Python/f.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Python/manager.py" beforeDir="false" afterPath="$PROJECT_DIR$/Python/manager.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Python/properties.py" beforeDir="false" afterPath="$PROJECT_DIR$/Python/utils/properties.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Python/server.py" beforeDir="false" afterPath="$PROJECT_DIR$/Python/utils/server.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Python/training.py" beforeDir="false" afterPath="$PROJECT_DIR$/Python/calculate_model/training.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Python/verify.py" beforeDir="false" afterPath="$PROJECT_DIR$/Python/prediction/verify.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/server/routes.py" beforeDir="false" afterPath="$PROJECT_DIR$/server/routes.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/server/run_server.py" beforeDir="false" afterPath="$PROJECT_DIR$/server/run_server.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/מנהל ראשי.docx" beforeDir="false" afterPath="$PROJECT_DIR$/מנהל ראשי.docx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Python/buy_computer_data.json" beforeDir="false" afterPath="$PROJECT_DIR$/Python/buy_computer_data.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Python/calculate_model/create_model.py" beforeDir="false" afterPath="$PROJECT_DIR$/Python/calculate_model/create_model.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Python/utils/properties.py" beforeDir="false" afterPath="$PROJECT_DIR$/Python/utils/properties.py" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -91,7 +78,7 @@
     "Python.utils.executor": "Run",
     "Python.verify.executor": "Run",
     "RunOnceActivity.ShowReadmeOnStart": "true",
-    "git-widget-placeholder": "resort",
+    "git-widget-placeholder": "V-0",
     "last_opened_file_path": "C:/Users/Menachem/Desktop/Galil/BaseNaiveStudy",
     "settings.editor.selected.configurable": "preferences.pluginManager"
   }
