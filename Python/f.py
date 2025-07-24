@@ -1,10 +1,9 @@
 import os
 
-import fastapi
 import uvicorn
 from fastapi import FastAPI
 from fastapi.responses import HTMLResponse
-from Python.server import Server
+from Python.utils.server import Server
 import pandas as pd
 
 app = FastAPI()
@@ -48,7 +47,7 @@ def get_absolute_route(file_name):
             columns_splitted = columns_splitted[1:-1]
             columns_shows = ' ,'.join(columns_splitted)
             end = "=XXX"
-            columns_routes = f"prediction/{file_name}/{index_route}/{primary_cls}/{f"{end}/".join(columns_splitted)}{end}"
+            columns_routes = f"calculate_model/{file_name}/{index_route}/{primary_cls}/{f"{end}/".join(columns_splitted)}{end}"
         out = (f"The table is: {file_name}. <br>"
                f"The columns are:<br>{columns_shows}.<br>"
                f'<a href="/{columns_routes}" style="margin: 10px; display: inline-block; color:red; font-size : 20px;">{columns_routes}</a>')
@@ -57,7 +56,7 @@ def get_absolute_route(file_name):
     except:
         return f"No table: {file_name}"
 
-@app.get("/prediction/{file_name}/{primary}/{index}/{keys:path}", response_class = HTMLResponse)
+@app.get("/calculate_model/{file_name}/{primary}/{index}/{keys:path}", response_class = HTMLResponse)
 def get_prediction(file_name ,primary : str, index : str, keys : str):
     pairs = keys.split("/")
     params = {}

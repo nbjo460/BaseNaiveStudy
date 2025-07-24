@@ -1,6 +1,3 @@
-import pandas as pd
-from Python.training import train as tr
-import numpy as np
 
 def execute(model : dict ,primary_classified : str ,**kwargs):
     Px = model["Px"]
@@ -8,7 +5,6 @@ def execute(model : dict ,primary_classified : str ,**kwargs):
     result = calculate(Pc, Px, primary_classified, **kwargs)
     result = show_result(result)
     return result
-
 def get_Pxc(Px, **kwargs):
     pxc = {}
     for cls in Px.keys():
@@ -17,19 +13,11 @@ def get_Pxc(Px, **kwargs):
         for col ,val in kwargs.items():
             if val not in Px[cls][col]:
                 pass
-                # val = np.int64(val)
-                # print(type(val))
             if col in Px[cls]:
                 try:
                     pxc[cls] *= Px[cls][col][val]
-                    # print(type(Px[cls][col][val]))
                 except:
                     print(f"I dont have enough data of: {val} n cols: {col}")
-                    # print(type(Px[cls]), type(Px[cls][col]), type(cls, col, val))
-                    # tmp = np.int64(val)
-                    # pxc[cls] *= Px[cls][col][tmp]
-                    # print(Px[cls])
-                    # pass
     return pxc
 
 def get_PxcPc(Pc : dict ,Pxc : dict, primary_classified : str):

@@ -3,7 +3,7 @@ from fastapi import FastAPI, Request
 from fastapi.responses import HTMLResponse
 from fastapi.templating import Jinja2Templates
 from fastapi.staticfiles import StaticFiles
-from Python.properties import properties_of_runner
+from Python.utils.properties import properties_of_runner
 
 runner_platform = "main" if (__name__ == "__main__") else "server"
 
@@ -27,11 +27,11 @@ def add_csv():
 def get_absolute_route(file_name, request : Request):
    pass
 
-@app.get("/prediction/{file_name}/{primary}/{index}/{keys:path}", response_class = HTMLResponse)
+@app.get("/calculate_model/{file_name}/{primary}/{index}/{keys:path}", response_class = HTMLResponse)
 def get_prediction(file_name ,primary : str, index : str, keys : str):
     pass
 
-@app.post("/prediction/{file_name}/{keys:path}")
+@app.post("/calculate_model/{file_name}/{keys:path}")
 async def post_prediction(file_name, request : Request, keys:str):
    pass
 

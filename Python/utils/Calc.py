@@ -1,5 +1,6 @@
 import pandas as pd
-import execute_prompt
+from Python.prediction import execute_prompt
+
 
 def run(table : pd, primary_classified : str, **kwargs):
     validate(table, **kwargs)

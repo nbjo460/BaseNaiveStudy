@@ -59,7 +59,7 @@ class train:
     @staticmethod
     def save_json(Px : dict):
         Px = train.convert_keys(Px)
-        with open("buy_computer_data.json", "w") as outfile:
+        with open("../buy_computer_data.json", "w") as outfile:
             json.dump(Px, outfile)
 
     @staticmethod

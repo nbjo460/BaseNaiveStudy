@@ -1,7 +1,6 @@
 import pandas as pd
-import Python.properties
-from Python.clean_table import clean as cl
-from Python.properties import properties_of_runner
+from Python.calculate_model.clean_table import clean as cl
+from Python.utils.properties import properties_of_runner
 
 
 class create_table:

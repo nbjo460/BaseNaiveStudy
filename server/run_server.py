@@ -4,12 +4,10 @@ from fastapi import FastAPI, Request
 from fastapi.responses import HTMLResponse
 from fastapi.templating import Jinja2Templates
 from fastapi.staticfiles import StaticFiles
-from fastapi.responses import FileResponse
-import Python.properties
 
-from Python.create_table import create_table as ct
-from Python.properties import properties_of_runner
-from Python.server import Server
+from Python.calculate_model.create_table import create_table as ct
+from Python.utils.properties import properties_of_runner
+from Python.utils.server import Server
 
 app = FastAPI()
 server = Server()
@@ -58,7 +56,7 @@ def get_absolute_route(file_name, request : Request):
     # except Exception as e:
     #     return f"No table: {file_name}\n {e}"
 
-@app.get("/prediction/{file_name}/{primary}/{index}/{keys:path}", response_class = HTMLResponse)
+@app.get("/calculate_model/{file_name}/{primary}/{index}/{keys:path}", response_class = HTMLResponse)
 def get_prediction(file_name ,primary : str, index : str, keys : str):
     pairs = keys.split("/")
     params = {}
@@ -71,7 +69,7 @@ def get_prediction(file_name ,primary : str, index : str, keys : str):
     return f"<h2>Prediction result:</h2><p>The result is:{result[0]}.<br>by {result[1]*100:.2f}%</p>"
     # return result
 
-@app.post("/prediction/{file_name}/{keys:path}")
+@app.post("/calculate_model/{file_name}/{keys:path}")
 async def post_prediction(file_name, request : Request, keys:str):
     params = dict(await request.json())
 

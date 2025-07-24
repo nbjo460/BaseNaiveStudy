@@ -1,5 +1,5 @@
-import create_model as cm
-import execute_prompt as pt
+from Python.calculate_model import create_model as cm
+from Python.prediction import execute_prompt as pt
 
 file_name = "buy_computer_data"
 primary_classified = "exist"
