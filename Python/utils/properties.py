@@ -18,4 +18,4 @@ def properties_of_runner(runner_platform: str, req_path: str):
         }
     }
 
-    return str(pathes[runner_platform][req_path])+"\\"
+    return str(pathes[runner_platform][req_path])+"/"

@@ -6,10 +6,9 @@
   <component name="ChangeListManager">
     <list default="true" id="f8e86af8-499f-4358-8c2c-cd30fb41225a" name="Changes" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Python/models/prompt.py" beforeDir="false" afterPath="$PROJECT_DIR$/Python/models/prompt.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Python/prediction/execute_prompt.py" beforeDir="false" afterPath="$PROJECT_DIR$/Python/prediction/execute_prompt.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Python/prediction/prediction_main.py" beforeDir="false" afterPath="$PROJECT_DIR$/Python/prediction/prediction_main.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/server/routes.py" beforeDir="false" afterPath="$PROJECT_DIR$/Python/prediction/server/routes.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Python/buy_computer_data.json" beforeDir="false" afterPath="$PROJECT_DIR$/Python/buy_computer_data.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Python/utils/properties.py" beforeDir="false" afterPath="$PROJECT_DIR$/Python/utils/properties.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/dockerfile" beforeDir="false" afterPath="$PROJECT_DIR$/dockerfile" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -74,6 +73,7 @@
     "Python.properties.executor": "Run",
     "Python.routes.executor": "Run",
     "Python.run_server.executor": "Run",
+    "Python.runner.executor": "Run",
     "Python.server.executor": "Run",
     "Python.training.executor": "Run",
     "Python.try.executor": "Run",
