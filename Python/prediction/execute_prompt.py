@@ -5,14 +5,15 @@ def execute(model : dict ,primary_classified : str ,**kwargs):
     result = calculate(Pc, Px, primary_classified, **kwargs)
     result = show_result(result)
     return result
+
 def get_Pxc(Px, **kwargs):
     pxc = {}
     for cls in Px.keys():
         pxc[cls] = 1
     for cls in Px:
         for col ,val in kwargs.items():
-            if val not in Px[cls][col]:
-                pass
+            if col not in Px[cls]:
+                continue
             if col in Px[cls]:
                 try:
                     pxc[cls] *= Px[cls][col][val]

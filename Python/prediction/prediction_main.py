@@ -1,18 +1,16 @@
 import Python.models.prompt as prompt
-import Python.utils.utils as util
 from Python.calculate_model.calc_main import Calc_main
 from Python.models.model import Model
-from Python.models.prompt import Prompt
 from Python.prediction.execute_prompt import execute
 
 
 class Prediction_main:
     def __init__(self):
-        self.models_list = {}
-        self.path = ""
-    def predict_with_model(self, _prompt : prompt):
-        predict_model = self._load_model(_prompt)
-        prediction = execute(predict_model, _prompt)
+        pass
+
+    def predict_with_model(self, _prompt : prompt, **_parameters):
+        model = self._load_model(_prompt)
+        prediction = execute(model.naive_base_model, model.classified_by, **_parameters)
         return prediction
 
     def get_bulk_prompts(self, _prompts : list):
@@ -32,10 +30,11 @@ class Prediction_main:
 
     @staticmethod
     def _fetch_model(_prompt : prompt):
-        tmp_model = Model.convert_prompt_to_model(_prompt)
-        type_model = Model.get_type_of_model_by_class(tmp_model)
-        model = Calc_main.get_model(type_model)
-        tmp_model.insert_self()
+        model = Model.convert_prompt_to_model(_prompt)
+        type_model = Model.get_type_of_model_by_class(model)
+        predict_model = Calc_main.get_model(type_model)
+        model.naive_base_model = predict_model
+        model.insert_self()
         return model
 
     def _join_model_to_existing_json(self):
@@ -43,5 +42,5 @@ class Prediction_main:
     def _create_json(self, data_name : str, model : dict):
         pass
 
-pt = Prompt("buy_computer_data", "exist", ["id"])
-print(Prediction_main().predict_with_model(pt))
+# pt = Prompt("buy_computer_data", "exist", ["id"])
+# print(Prediction_main().predict_with_model(pt))
