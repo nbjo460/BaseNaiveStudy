@@ -1,5 +1,5 @@
 import Python.calculate_model.create_model as cm
-import Python.prediction.execute_prompt as pt
+import Python.utils.execute_prompt as pt
 
 class Server:
     models = {}

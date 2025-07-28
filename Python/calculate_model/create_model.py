@@ -1,7 +1,6 @@
 # import traceback
 
 import pandas as pd
-from Python.prediction import verify as vf
 
 from Python.calculate_model.create_table import create_table
 from Python.calculate_model.training import train as tr
@@ -10,9 +9,9 @@ class Create_model:
     @staticmethod
     def run(file_name : str, primary_classified : str, drops : list, runner_platform):
         model, verifies_rows, table = Create_model.creates_model(file_name, primary_classified, drops, runner_platform)
-        probabillity = {"Px" : model, "Pc" : Create_model.get_Pc(table, primary_classified, model.keys())}
-        Create_model.verify(probabillity, table, primary_classified)
-        return probabillity
+        calculate_model = {"Px" : model, "Pc" : Create_model.get_Pc(table, primary_classified, model.keys())}
+        percent = Create_model.verify(calculate_model, table, primary_classified)
+        return calculate_model, percent
 
     @staticmethod
     def creates_model(file_name : str, primary_classified : str, drops : list, runner_platform):
@@ -63,4 +62,6 @@ class Create_model:
 
     @staticmethod
     def verify(model : dict, verifies_rows : pd,primary_classified : str):
-        vf.run(model, verifies_rows, primary_classified)
+        from Python.calculate_model import verify as vf
+
+        return vf.run(model, verifies_rows, primary_classified)

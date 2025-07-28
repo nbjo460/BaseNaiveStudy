@@ -1,13 +1,12 @@
 import fastapi
 import uvicorn
-import Python.prediction.server.background_server as back
 from fastapi.staticfiles import StaticFiles
 from starlette.templating import Jinja2Templates
 from fastapi.responses import HTMLResponse
-from Python.models.prompt import Prompt
-from Python.prediction.prediction_main import Prediction_main
+
+from Python.calculate_model.calc_main import Calc_main
+from Python.models.model import Model_type, Model
 from Python.utils.properties import properties_of_runner
-from Python.prediction.server.routes import templates
 
 
 class Routes:
@@ -19,14 +18,17 @@ class Routes:
         pass
 
     @staticmethod
-    @app.get("/", response_class=HTMLResponse)
+    @app.get("/")
     def root(request : fastapi.Request):
         a = {"request":request, "table_name":"file_name", "uniques" : {},"cols" : []}
-        return templates.TemplateResponse("table_show.html", a)
+        return {}
 
     @staticmethod
-    @app.get("/micro_service/{file_name}/{classified_by}/{keys:path}")
-    def micro_service(request : fastapi.Request, keys : str, classified_by : str, file_name : str,ignore_by : str = fastapi.Query(default="")):
-            return back.micro_service(keys,classified_by,file_name,ignore_by)
+    @app.post("/get_model/")
+    def micro_service(data : dict):
+        model_type = Model_type(**data)
+        model = Model(model_type.data_file_name, classified_by= model_type.classified_by, ignore_cols=model_type.ignore_cols)
+
+        return Calc_main.get_model(model)
 if __name__ =="__main__":
-    uvicorn.run(Routes.app, host="localhost", port=8020)
+    uvicorn.run(Routes.app, host="localhost", port=8011)

@@ -1,5 +1,5 @@
 import pandas as pd
-from Python.prediction import execute_prompt
+from Python.utils import execute_prompt
 
 
 def run(table : pd, primary_classified : str, **kwargs):

@@ -1,7 +1,5 @@
 import pandas as pd
-from Python.prediction import execute_prompt as ep
-
-
+from Python.utils import execute_prompt as ep
 
 
 def run(model : dict, verifies_rows : pd, primary_classified : str):

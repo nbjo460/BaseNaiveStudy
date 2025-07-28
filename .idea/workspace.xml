@@ -5,10 +5,26 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="f8e86af8-499f-4358-8c2c-cd30fb41225a" name="Changes" comment="">
+      <change afterPath="$PROJECT_DIR$/Python/routes.py" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Python/buy_computer_data.json" beforeDir="false" afterPath="$PROJECT_DIR$/Python/buy_computer_data.json" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Python/utils/properties.py" beforeDir="false" afterPath="$PROJECT_DIR$/Python/utils/properties.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/dockerfile" beforeDir="false" afterPath="$PROJECT_DIR$/dockerfile" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Python/buy_computer_data.json" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Python/calculate_model/buy_computer_data.json" beforeDir="false" afterPath="$PROJECT_DIR$/Python/calculate_model/buy_computer_data.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Python/calculate_model/calc_main.py" beforeDir="false" afterPath="$PROJECT_DIR$/Python/calculate_model/calc_main.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Python/calculate_model/create_model.py" beforeDir="false" afterPath="$PROJECT_DIR$/Python/calculate_model/create_model.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Python/calculate_model/server/routes.py" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Python/f.py" beforeDir="false" afterPath="$PROJECT_DIR$/f.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Python/manager.py" beforeDir="false" afterPath="$PROJECT_DIR$/manager.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Python/models/model.py" beforeDir="false" afterPath="$PROJECT_DIR$/Python/models/model.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Python/prediction/execute_prompt.py" beforeDir="false" afterPath="$PROJECT_DIR$/Python/utils/execute_prompt.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Python/prediction/prediction_main.py" beforeDir="false" afterPath="$PROJECT_DIR$/Python/prediction/prediction_main.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Python/prediction/runner.py" beforeDir="false" afterPath="$PROJECT_DIR$/Python/prediction/runner.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Python/prediction/server/background_server.py" beforeDir="false" afterPath="$PROJECT_DIR$/Python/prediction/server/background_server.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Python/prediction/server/routes.py" beforeDir="false" afterPath="$PROJECT_DIR$/Python/prediction/server/routes.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Python/prediction/verify.py" beforeDir="false" afterPath="$PROJECT_DIR$/Python/calculate_model/verify.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Python/try.py" beforeDir="false" afterPath="$PROJECT_DIR$/try.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Python/utils/Calc.py" beforeDir="false" afterPath="$PROJECT_DIR$/Python/utils/Calc.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Python/utils/server.py" beforeDir="false" afterPath="$PROJECT_DIR$/Python/utils/server.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/requirements.txt" beforeDir="false" afterPath="$PROJECT_DIR$/requirements.txt" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -59,46 +75,47 @@
     <option name="hideEmptyMiddlePackages" value="true" />
     <option name="showLibraryContents" value="true" />
   </component>
-  <component name="PropertiesComponent"><![CDATA[{
-  "keyToString": {
-    "Python.Calc.executor": "Run",
-    "Python.calc_main.executor": "Run",
-    "Python.clean_table.executor": "Run",
-    "Python.create_model.executor": "Run",
-    "Python.create_table.executor": "Run",
-    "Python.execute_prompt.executor": "Run",
-    "Python.f.executor": "Run",
-    "Python.manager.executor": "Run",
-    "Python.prediction_main.executor": "Run",
-    "Python.properties.executor": "Run",
-    "Python.routes.executor": "Run",
-    "Python.run_server.executor": "Run",
-    "Python.runner.executor": "Run",
-    "Python.server.executor": "Run",
-    "Python.training.executor": "Run",
-    "Python.try.executor": "Run",
-    "Python.utils.executor": "Run",
-    "Python.verify.executor": "Run",
-    "RunOnceActivity.ShowReadmeOnStart": "true",
-    "git-widget-placeholder": "V-0",
-    "last_opened_file_path": "C:/Users/Menachem/Desktop/Galil/BaseNaiveStudy",
-    "settings.editor.selected.configurable": "preferences.pluginManager"
+  <component name="PropertiesComponent">{
+  &quot;keyToString&quot;: {
+    &quot;Python.Calc.executor&quot;: &quot;Run&quot;,
+    &quot;Python.calc_main.executor&quot;: &quot;Run&quot;,
+    &quot;Python.clean_table.executor&quot;: &quot;Run&quot;,
+    &quot;Python.create_model.executor&quot;: &quot;Run&quot;,
+    &quot;Python.create_table.executor&quot;: &quot;Run&quot;,
+    &quot;Python.execute_prompt.executor&quot;: &quot;Run&quot;,
+    &quot;Python.f.executor&quot;: &quot;Run&quot;,
+    &quot;Python.manager.executor&quot;: &quot;Run&quot;,
+    &quot;Python.prediction_main.executor&quot;: &quot;Run&quot;,
+    &quot;Python.properties.executor&quot;: &quot;Run&quot;,
+    &quot;Python.routes.executor&quot;: &quot;Run&quot;,
+    &quot;Python.run_server.executor&quot;: &quot;Run&quot;,
+    &quot;Python.runner.executor&quot;: &quot;Run&quot;,
+    &quot;Python.server.executor&quot;: &quot;Run&quot;,
+    &quot;Python.training.executor&quot;: &quot;Run&quot;,
+    &quot;Python.try.executor&quot;: &quot;Run&quot;,
+    &quot;Python.utils.executor&quot;: &quot;Run&quot;,
+    &quot;Python.verify.executor&quot;: &quot;Run&quot;,
+    &quot;RunOnceActivity.ShowReadmeOnStart&quot;: &quot;true&quot;,
+    &quot;git-widget-placeholder&quot;: &quot;V-2&quot;,
+    &quot;last_opened_file_path&quot;: &quot;C:/Users/Menachem/Desktop/Galil/BaseNaiveStudy/Python/calculate_model/server&quot;,
+    &quot;settings.editor.selected.configurable&quot;: &quot;preferences.pluginManager&quot;
   }
-}]]></component>
+}</component>
   <component name="RecentsManager">
     <key name="CopyFile.RECENT_KEYS">
+      <recent name="C:\Users\Menachem\Desktop\Galil\BaseNaiveStudy\Python\calculate_model\server" />
       <recent name="C:\Users\Menachem\Desktop\Galil\BaseNaiveStudy\.venv\Scripts\Python" />
       <recent name="C:\Users\Menachem\Desktop\Galil\BaseNaiveStudy\.venv\Scripts" />
     </key>
     <key name="MoveFile.RECENT_KEYS">
-      <recent name="C:\Users\Menachem\Desktop\Galil\BaseNaiveStudy\Python\prediction\server" />
-      <recent name="C:\Users\Menachem\Desktop\Galil\BaseNaiveStudy\Python\prediction" />
+      <recent name="C:\Users\Menachem\Desktop\Galil\BaseNaiveStudy" />
       <recent name="C:\Users\Menachem\Desktop\Galil\BaseNaiveStudy\Python\calculate_model" />
       <recent name="C:\Users\Menachem\Desktop\Galil\BaseNaiveStudy\Python\utils" />
-      <recent name="C:\Users\Menachem\Desktop\Galil\BaseNaiveStudy\Python\models" />
+      <recent name="C:\Users\Menachem\Desktop\Galil\BaseNaiveStudy\Python" />
+      <recent name="C:\Users\Menachem\Desktop\Galil\BaseNaiveStudy\Python\prediction\server" />
     </key>
   </component>
-  <component name="RunManager">
+  <component name="RunManager" selected="Python.routes">
     <configuration name="manager" type="PythonConfigurationType" factoryName="Python" temporary="true" nameIsGenerated="true">
       <module name="BaseNaiveStudy" />
       <option name="ENV_FILES" value="" />
@@ -112,7 +129,29 @@
       <option name="IS_MODULE_SDK" value="true" />
       <option name="ADD_CONTENT_ROOTS" value="true" />
       <option name="ADD_SOURCE_ROOTS" value="true" />
-      <option name="SCRIPT_NAME" value="$PROJECT_DIR$/Python/manager.py" />
+      <option name="SCRIPT_NAME" value="C:\Users\Menachem\Desktop\Galil\BaseNaiveStudy\manager.py" />
+      <option name="PARAMETERS" value="" />
+      <option name="SHOW_COMMAND_LINE" value="false" />
+      <option name="EMULATE_TERMINAL" value="false" />
+      <option name="MODULE_MODE" value="false" />
+      <option name="REDIRECT_INPUT" value="false" />
+      <option name="INPUT_FILE" value="" />
+      <method v="2" />
+    </configuration>
+    <configuration name="routes" type="PythonConfigurationType" factoryName="Python" temporary="true" nameIsGenerated="true">
+      <module name="BaseNaiveStudy" />
+      <option name="ENV_FILES" value="" />
+      <option name="INTERPRETER_OPTIONS" value="" />
+      <option name="PARENT_ENVS" value="true" />
+      <envs>
+        <env name="PYTHONUNBUFFERED" value="1" />
+      </envs>
+      <option name="SDK_HOME" value="" />
+      <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$/Python/calculate_model/server" />
+      <option name="IS_MODULE_SDK" value="true" />
+      <option name="ADD_CONTENT_ROOTS" value="true" />
+      <option name="ADD_SOURCE_ROOTS" value="true" />
+      <option name="SCRIPT_NAME" value="$PROJECT_DIR$/Python/calculate_model/server/routes.py" />
       <option name="PARAMETERS" value="" />
       <option name="SHOW_COMMAND_LINE" value="false" />
       <option name="EMULATE_TERMINAL" value="false" />
@@ -123,6 +162,7 @@
     </configuration>
     <recent_temporary>
       <list>
+        <item itemvalue="Python.routes" />
         <item itemvalue="Python.manager" />
       </list>
     </recent_temporary>
