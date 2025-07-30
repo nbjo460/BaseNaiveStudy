@@ -18,8 +18,23 @@ templates = Jinja2Templates(directory=properties_of_runner(runner_platform, "tem
 app.mount("/static", StaticFiles(directory=properties_of_runner(runner_platform, "static")), name="static")
 
 def list_csv_files(csv_folder : str):
+    def find_csv_dir(start_path):
+        current_path = os.path.abspath(start_path)
+        while True:
+            possible_csv = os.path.join(current_path, "csv")
+            if os.path.isdir(possible_csv):
+                return possible_csv
+            parent = os.path.dirname(current_path)
+            if parent == current_path:
+                # הגענו לשורש ואין תיקיית csv
+                raise FileNotFoundError("Could not find 'csv' directory")
+            current_path = parent
+
+    # תחילת החיפוש מהתיקייה של הסקריפט או מה-cwd
+    csv_dir = find_csv_dir(os.getcwd())
+
     files_list = []
-    for root, dir, files in os.walk(csv_folder):
+    for root, dir, files in os.walk(csv_dir):
         for file in files:
             if file[-4:].lower() == ".csv":
                 files_list.append(file[:-4])
@@ -65,7 +80,8 @@ def get_prediction(file_name ,primary : str, index : str, keys : str):
         if '=' in pair:
             tmp = pair.split("=", 1)
             params[tmp[0]] = tmp[1] if tmp[1] != "" else "Empty"
-    result = server.run_server(file_name, primary, index, **params)
+    index = index.split(",")
+    result = server.run_server(file_name, primary, index, **params, runner_platform=runner_platform)
     return f"<h2>Prediction result:</h2><p>The result is:{result[0]}.<br>by {result[1]*100:.2f}%</p>"
     # return result
 

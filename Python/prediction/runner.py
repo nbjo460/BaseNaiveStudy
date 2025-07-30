@@ -1,5 +1,4 @@
 
-from Python.calculate_model.server.routes import Routes
+import server.run_server as  r
 
-r = Routes()
 app = r.app
